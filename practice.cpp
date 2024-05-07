@@ -1,22 +1,21 @@
 #include<iostream>
 using namespace std;
 
-class abc{
-    int value;
-    public:
-        abc(){
-            value = 10;
-        }
-        void operator ++(){
-            value = value + 5;
-        }
-        int display(){
-            return value;
-        }
-};
 int main(){
-    abc a;
-    ++a;
-    cout << a.display();
+    int num, den, result;
+    cout<<"numerator and denominator"<<endl;
+    cin >> num >> den;
+    try{
+        if(den==0){
+            throw den;
+        }
+        result = num/den;
+    }
+    catch(int ex){
+        cout<<"exception: divide by zero is not allowed"<<ex<<endl;
+    }
+    
+    
+    cout<<"the division is: "<< result;
     return 0;
 }
